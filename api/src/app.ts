@@ -12,7 +12,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/cep', async (req, res) => {
-    const cepReturned = await cep('41250410')
+    const cepParam = req.query.value;
+    const cepReturned = await cep(`${cepParam}`)
     res.send(cepReturned);
 })
 
